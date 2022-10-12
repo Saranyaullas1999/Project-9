@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Car</th>
+                    <th scope="col">Car Model</th>
+                    <th scope="col">Car Color</th>
+                    <th scope="col">Car Model Year</th>
+                    <th scope="col">Car VIN</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Availability</th>
+
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of carData.cars">
+                    <td>{{i.id}}</td>
+                    <td>{{i.car}}</td>
+                    <td>{{i.car_model}}</td>
+                    <td>{{i.car_color}}</td>
+                    <td>{{i.car_model_year}}</td>
+                    <td>{{i.car_vin}}</td>
+                    <td>{{i.price}}</td>
+                    <td *ngIf="i.availability">
+                        <div class="alert alert-success" role="alert">
+                            Available
+                          </div>
+                    </td>
+                    <td *ngIf="!i.availability">
+                        <div class="alert alert-danger" role="alert">
+                            Not Available
+                          </div>
+                    </td>
+
+                  </tr>
+                 
+                </tbody>
+              </table>
+
+        </div>
+    </div>
+</div>
